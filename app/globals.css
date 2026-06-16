@@ -48,111 +48,114 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ===========================
+   COLOR PALETTE — Navy + Blue + Amber
+   =========================== */
 :root {
   color-scheme: light;
-  --background: #faf7f2;
-  --foreground: #111622;
+  --background: #f7f9ff;
+  --foreground: #080d1f;
   --card: #ffffff;
-  --card-foreground: #111622;
+  --card-foreground: #080d1f;
   --popover: #ffffff;
-  --popover-foreground: #111622;
-  --primary: #0b5a5c;
+  --popover-foreground: #080d1f;
+  --primary: #0f1f5c;
   --primary-foreground: #ffffff;
-  --secondary: #f3ede2;
-  --secondary-foreground: #0b5a5c;
-  --muted: #e8ded0;
-  --muted-foreground: #5e6472;
-  --accent: #d9a05b;
+  --secondary: #eef1fb;
+  --secondary-foreground: #0f1f5c;
+  --accent: #2563eb;
   --accent-foreground: #ffffff;
-  --destructive: #df4747;
-  --border: #e3ded6;
-  --input: #f6f1e9;
-  --ring: #0b5a5c;
-  --chart-1: #0b5a5c;
-  --chart-2: #d9a05b;
-  --chart-3: #4b5563;
-  --chart-4: #9ca3af;
-  --chart-5: #d1d5db;
-  --radius: 0.5rem;
+  --muted: #e4e9f7;
+  --muted-foreground: #5a6282;
+  --destructive: #ef4444;
+  --border: #dde2f0;
+  --input: #f0f3fc;
+  --ring: #2563eb;
+  --chart-1: #0f1f5c;
+  --chart-2: #2563eb;
+  --chart-3: #f59e0b;
+  --chart-4: #10b981;
+  --chart-5: #8b5cf6;
+  --radius: 0.625rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #111622;
-  --sidebar-primary: #0b5a5c;
+  --sidebar-foreground: #080d1f;
+  --sidebar-primary: #0f1f5c;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #d9a05b;
+  --sidebar-accent: #2563eb;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e3ded6;
-  --sidebar-ring: #0b5a5c;
+  --sidebar-border: #dde2f0;
+  --sidebar-ring: #2563eb;
 }
 
 .dark {
   color-scheme: dark;
-  --background: #0f1419;
-  --foreground: #f5f0eb;
-  --card: #1a1f2e;
-  --card-foreground: #f5f0eb;
-  --popover: #1a1f2e;
-  --popover-foreground: #f5f0eb;
-  --primary: #0d7c7f;
-  --primary-foreground: #0f1419;
-  --secondary: #2d3748;
-  --secondary-foreground: #f5f0eb;
-  --muted: #2d3748;
-  --muted-foreground: #9ca3af;
-  --accent: #d4a574;
-  --accent-foreground: #0f1419;
+  --background: #060b18;
+  --foreground: #eef1fb;
+  --card: #0c1328;
+  --card-foreground: #eef1fb;
+  --popover: #0c1328;
+  --popover-foreground: #eef1fb;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #111c3d;
+  --secondary-foreground: #eef1fb;
+  --accent: #60a5fa;
+  --accent-foreground: #060b18;
+  --muted: #111c3d;
+  --muted-foreground: #7c8db5;
   --destructive: #ef4444;
-  --border: #2d3748;
-  --input: #1a1f2e;
-  --ring: #0d7c7f;
-  --chart-1: #0d7c7f;
-  --chart-2: #d4a574;
-  --chart-3: #6b7280;
-  --chart-4: #4b5563;
-  --chart-5: #374151;
-  --sidebar: #1a1f2e;
-  --sidebar-foreground: #f5f0eb;
-  --sidebar-primary: #0d7c7f;
-  --sidebar-primary-foreground: #f5f0eb;
-  --sidebar-accent: #d4a574;
-  --sidebar-accent-foreground: #0f1419;
-  --sidebar-border: #2d3748;
-  --sidebar-ring: #0d7c7f;
+  --border: #192245;
+  --input: #0c1328;
+  --ring: #3b82f6;
+  --chart-1: #3b82f6;
+  --chart-2: #60a5fa;
+  --chart-3: #fbbf24;
+  --chart-4: #34d399;
+  --chart-5: #a78bfa;
+  --sidebar: #0c1328;
+  --sidebar-foreground: #eef1fb;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #eef1fb;
+  --sidebar-accent: #60a5fa;
+  --sidebar-accent-foreground: #060b18;
+  --sidebar-border: #192245;
+  --sidebar-ring: #3b82f6;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     color-scheme: dark;
-    --background: #0f1419;
-    --foreground: #f5f0eb;
-    --card: #1a1f2e;
-    --card-foreground: #f5f0eb;
-    --popover: #1a1f2e;
-    --popover-foreground: #f5f0eb;
-    --primary: #0d7c7f;
-    --primary-foreground: #0f1419;
-    --secondary: #2d3748;
-    --secondary-foreground: #f5f0eb;
-    --muted: #2d3748;
-    --muted-foreground: #9ca3af;
-    --accent: #d4a574;
-    --accent-foreground: #0f1419;
+    --background: #060b18;
+    --foreground: #eef1fb;
+    --card: #0c1328;
+    --card-foreground: #eef1fb;
+    --popover: #0c1328;
+    --popover-foreground: #eef1fb;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #111c3d;
+    --secondary-foreground: #eef1fb;
+    --accent: #60a5fa;
+    --accent-foreground: #060b18;
+    --muted: #111c3d;
+    --muted-foreground: #7c8db5;
     --destructive: #ef4444;
-    --border: #2d3748;
-    --input: #1a1f2e;
-    --ring: #0d7c7f;
-    --chart-1: #0d7c7f;
-    --chart-2: #d4a574;
-    --chart-3: #6b7280;
-    --chart-4: #4b5563;
-    --chart-5: #374151;
-    --sidebar: #1a1f2e;
-    --sidebar-foreground: #f5f0eb;
-    --sidebar-primary: #0d7c7f;
-    --sidebar-primary-foreground: #f5f0eb;
-    --sidebar-accent: #d4a574;
-    --sidebar-accent-foreground: #0f1419;
-    --sidebar-border: #2d3748;
-    --sidebar-ring: #0d7c7f;
+    --border: #192245;
+    --input: #0c1328;
+    --ring: #3b82f6;
+    --chart-1: #3b82f6;
+    --chart-2: #60a5fa;
+    --chart-3: #fbbf24;
+    --chart-4: #34d399;
+    --chart-5: #a78bfa;
+    --sidebar: #0c1328;
+    --sidebar-foreground: #eef1fb;
+    --sidebar-primary: #3b82f6;
+    --sidebar-primary-foreground: #eef1fb;
+    --sidebar-accent: #60a5fa;
+    --sidebar-accent-foreground: #060b18;
+    --sidebar-border: #192245;
+    --sidebar-ring: #3b82f6;
   }
 }
 
@@ -169,111 +172,211 @@
   }
 }
 
-@keyframes slide-in-from-left {
-  from {
-    opacity: 0;
-    transform: translateX(-24px);
-  }
+/* ===========================
+   SCROLL REVEAL SYSTEM
+   =========================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes slide-in-from-right {
-  from {
-    opacity: 0;
-    transform: translateX(24px);
-  }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes slide-in-from-top {
-  from {
-    opacity: 0;
-    transform: translateY(-24px);
-  }
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.stagger-1 { transition-delay: 80ms; }
+.stagger-2 { transition-delay: 160ms; }
+.stagger-3 { transition-delay: 240ms; }
+.stagger-4 { transition-delay: 320ms; }
+.stagger-5 { transition-delay: 400ms; }
+.stagger-6 { transition-delay: 480ms; }
+
+/* ===========================
+   RECEIPT SCROLL ANIMATION
+   =========================== */
+.receipt-paper {
+  transition: max-height 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.6s ease;
+}
+
+/* ===========================
+   KEYFRAMES
+   =========================== */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slide-in-from-bottom {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
+@keyframes slide-in-from-top {
+  from { opacity: 0; transform: translateY(-28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-from-left {
+  from { opacity: 0; transform: translateX(-28px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-from-right {
+  from { opacity: 0; transform: translateX(28px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(13, 124, 127, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(13, 124, 127, 0.6);
-  }
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes loader-bar {
+  0% { width: 0%; }
+  20% { width: 30%; }
+  60% { width: 68%; }
+  90% { width: 90%; }
+  100% { width: 100%; }
+}
+
+@keyframes loader-logo {
+  0% { opacity: 0; transform: scale(0.88) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes loader-out {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-100%); }
+}
+
+@keyframes dot-bounce {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* ===========================
+   UTILITY CLASSES
+   =========================== */
 @layer utilities {
   .animate-in {
     animation: fade-in 0.5s ease-out forwards;
   }
-  
-  .fade-in {
-    animation: fade-in 0.5s ease-out;
+
+  .fade-in { animation: fade-in 0.5s ease-out both; }
+  .slide-in-from-bottom { animation: slide-in-from-bottom 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .slide-in-from-top { animation: slide-in-from-top 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .slide-in-from-left { animation: slide-in-from-left 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .slide-in-from-right { animation: slide-in-from-right 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .scale-in { animation: scale-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .float { animation: float 4s ease-in-out infinite; }
+  .ticker-scroll { animation: ticker-scroll 28s linear infinite; }
+  .loader-bar { animation: loader-bar 2.2s ease-out forwards; }
+  .loader-logo { animation: loader-logo 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both; }
+  .loader-out { animation: loader-out 0.6s cubic-bezier(0.55, 0, 1, 0.45) forwards; }
+  .gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 8s ease infinite;
   }
-  
-  .slide-in-from-left {
-    animation: slide-in-from-left 0.5s ease-out;
+
+  .duration-700 { animation-duration: 700ms; }
+  .duration-1000 { animation-duration: 1000ms; }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #0f1f5c 0%, #2563eb 60%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  
-  .slide-in-from-right {
-    animation: slide-in-from-right 0.5s ease-out;
+
+  .text-gradient-amber {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  
-  .slide-in-from-top {
-    animation: slide-in-from-top 0.5s ease-out;
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
-  
-  .slide-in-from-bottom {
-    animation: slide-in-from-bottom 0.5s ease-out;
+
+  .bg-dot {
+    background-image: radial-gradient(circle, rgba(37, 99, 235, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
-  
-  .scale-in {
-    animation: scale-in 0.5s ease-out;
+
+  .device-shadow {
+    box-shadow:
+      0 0 0 1px rgba(15, 31, 92, 0.06),
+      0 4px 12px rgba(15, 31, 92, 0.08),
+      0 24px 56px rgba(37, 99, 235, 0.14),
+      0 56px 96px rgba(15, 31, 92, 0.08);
   }
-  
-  .float {
-    animation: float 3s ease-in-out infinite;
+
+  .card-hover {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  
-  .glow {
-    animation: glow 3s ease-in-out infinite;
-  }
-  
-  .duration-700 {
-    animation-duration: 700ms;
-  }
-  
-  .delay-200 {
-    animation-delay: 200ms;
-  }
-  
-  .zoom-in {
-    animation: scale-in 0.5s ease-out;
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(37, 99, 235, 0.12);
   }
 }

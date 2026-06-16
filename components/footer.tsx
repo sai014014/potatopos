@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Mail, Phone, MapPin, ExternalLink, Twitter, Share2, Camera, ArrowRight } from 'lucide-react'
+import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Footer() {
@@ -16,16 +16,16 @@ export default function Footer() {
   }
 
   return (
-    <footer className="w-full bg-[#111622] text-white/90 border-t border-border">
-      {/* Newsletter / Upper Footer */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 pt-16 pb-12 max-w-7xl mx-auto border-b border-white/10">
+    <footer className="w-full bg-[#080d1f] text-white/80">
+      {/* Newsletter bar */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-12 border-b border-white/6 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6">
-            <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-2">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-tight">
               Stay ahead on restaurant compliance
             </h3>
-            <p className="text-sm text-white/60 font-light max-w-md">
-              Get monthly updates on UK food safety legislation, EHO standards, and tech tips to streamline operations.
+            <p className="text-sm text-white/45 font-light max-w-md">
+              Monthly updates on UK food safety legislation, EHO standards, and tech tips.
             </p>
           </div>
           <div className="lg:col-span-6">
@@ -36,11 +36,11 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="bg-white/5 border border-white/10 text-white placeholder-white/45 px-4 py-2.5 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-accent w-full transition"
+                className="bg-white/5 border border-white/10 text-white placeholder-white/30 px-4 py-2.5 rounded-xl text-sm focus:outline-none focus:ring-1 focus:ring-[#2563eb] w-full transition"
               />
               <button
                 type="submit"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground px-5 py-2.5 rounded-lg text-sm font-semibold transition flex items-center gap-1.5 flex-shrink-0"
+                className="bg-[#2563eb] hover:bg-[#1d4fd8] text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center gap-1.5 flex-shrink-0"
               >
                 Subscribe <ArrowRight size={14} />
               </button>
@@ -49,38 +49,31 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Main Footer */}
+      {/* Main footer */}
       <div className="w-full px-4 sm:px-6 lg:px-8 py-16 max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <Image src="/logo-final.png" alt="Potato POS" width={36} height={36} className="rounded" />
+            <div className="flex items-center gap-2.5 mb-5">
+              <Image src="/logo-final.png" alt="Potato POS" width={36} height={36} className="rounded-xl" />
               <div>
-                <h3 className="font-bold text-base tracking-wide text-white">POTATO</h3>
-                <p className="text-[10px] text-accent font-semibold tracking-widest uppercase">POS & COMPLIANCE</p>
+                <h3 className="font-bold text-base tracking-tight text-white">Potato POS</h3>
+                <p className="text-[9px] text-[#2563eb] font-semibold tracking-widest uppercase mt-0.5">UK Restaurant Tech</p>
               </div>
             </div>
-            <p className="text-xs text-white/60 font-light leading-relaxed mb-6">
-              Modern point-of-sale systems unified with regulatory HACCP safety logging. Built for UK hospitality.
+            <p className="text-xs text-white/40 font-light leading-relaxed mb-6">
+              Modern POS unified with automated HACCP compliance. Built for UK hospitality.
             </p>
-            <div className="flex gap-2">
-              <a href="#" className="hover:text-white transition-colors p-2 rounded-lg bg-white/5 hover:bg-white/10">
-                <ExternalLink size={16} />
-              </a>
-              <a href="#" className="hover:text-white transition-colors p-2 rounded-lg bg-white/5 hover:bg-white/10">
-                <Twitter size={16} />
-              </a>
-              <a href="#" className="hover:text-white transition-colors p-2 rounded-lg bg-white/5 hover:bg-white/10">
-                <Share2 size={16} />
-              </a>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-xs text-white/40">All systems operational</span>
             </div>
           </div>
 
           {/* Product */}
           <div>
-            <h4 className="font-semibold text-xs tracking-widest uppercase text-white mb-6">Product</h4>
-            <ul className="space-y-3 text-xs text-white/65 font-light">
+            <h4 className="font-semibold text-[10px] tracking-widest uppercase text-white mb-5">Product</h4>
+            <ul className="space-y-3 text-xs text-white/45 font-light">
               <li><Link href="/features" className="hover:text-white transition-colors">POS Features</Link></li>
               <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing Plans</Link></li>
               <li><Link href="/compliance" className="hover:text-white transition-colors">HACCP Tracker</Link></li>
@@ -91,8 +84,8 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-xs tracking-widest uppercase text-white mb-6">Company</h4>
-            <ul className="space-y-3 text-xs text-white/65 font-light">
+            <h4 className="font-semibold text-[10px] tracking-widest uppercase text-white mb-5">Company</h4>
+            <ul className="space-y-3 text-xs text-white/45 font-light">
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Success Stories</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Knowledge Base</a></li>
@@ -103,8 +96,8 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold text-xs tracking-widest uppercase text-white mb-6">Legal</h4>
-            <ul className="space-y-3 text-xs text-white/65 font-light">
+            <h4 className="font-semibold text-[10px] tracking-widest uppercase text-white mb-5">Legal</h4>
+            <ul className="space-y-3 text-xs text-white/45 font-light">
               <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
@@ -113,33 +106,33 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Support */}
           <div>
-            <h4 className="font-semibold text-xs tracking-widest uppercase text-white mb-6">Support</h4>
-            <ul className="space-y-4 text-xs text-white/65 font-light">
+            <h4 className="font-semibold text-[10px] tracking-widest uppercase text-white mb-5">Support</h4>
+            <ul className="space-y-4 text-xs text-white/45 font-light">
               <li className="flex items-start gap-2">
-                <Mail size={14} className="mt-0.5 text-accent" />
+                <Mail size={13} className="mt-0.5 text-[#2563eb] flex-shrink-0" />
                 <a href="mailto:hello@potatopos.com" className="hover:text-white transition-colors">hello@potatopos.com</a>
               </li>
               <li className="flex items-start gap-2">
-                <Phone size={14} className="mt-0.5 text-accent" />
+                <Phone size={13} className="mt-0.5 text-[#2563eb] flex-shrink-0" />
                 <a href="tel:+442071234567" className="hover:text-white transition-colors">+44 (0) 20 7123 4567</a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin size={14} className="mt-0.5 text-accent" />
+                <MapPin size={13} className="mt-0.5 text-[#2563eb] flex-shrink-0" />
                 <span>King&apos;s Cross, London, UK</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Footer */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-white/45">
+        {/* Bottom bar */}
+        <div className="pt-8 border-t border-white/6 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-white/25">
           <p>&copy; {currentYear} Potato POS. Engineered in London. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Server Status</a>
-            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
-            <a href="#" className="hover:text-white transition-colors">EHO Checklist</a>
+            <a href="#" className="hover:text-white/60 transition-colors">Server Status</a>
+            <a href="#" className="hover:text-white/60 transition-colors">Sitemap</a>
+            <a href="#" className="hover:text-white/60 transition-colors">EHO Checklist</a>
           </div>
         </div>
       </div>

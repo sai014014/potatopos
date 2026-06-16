@@ -9,6 +9,7 @@ interface HeroSlide {
   id: number
   image: string
   title: string
+  highlight: string
   subtitle: string
   cta: string
   ctaLink: string
@@ -21,21 +22,23 @@ const slides: HeroSlide[] = [
   {
     id: 1,
     image: '/hero-1.png',
-    title: 'Streamline Your Restaurant Operations',
-    subtitle: 'Modern POS and compliance software built specifically for UK restaurants. Save 5+ hours a week.',
+    title: 'Restaurant Operations,',
+    highlight: 'Fully Automated',
+    subtitle: 'Modern POS and compliance software built for UK restaurants. Cut admin time by 5+ hours a week.',
     cta: 'Start Free Trial',
     ctaLink: '/contact',
-    secondaryCta: 'Explore Features',
+    secondaryCta: 'See Features',
     secondaryLink: '/features',
     badge: 'UK Restaurant Standard',
   },
   {
     id: 2,
     image: '/hero-2.png',
-    title: 'Real-Time Compliance & Monitoring',
-    subtitle: 'Automated compliance checks, analytics, and intelligent temperature monitoring. Stay inspection-ready 24/7.',
-    cta: 'Explore Features',
-    ctaLink: '/features',
+    title: 'Stay Inspection-Ready',
+    highlight: '24 / 7',
+    subtitle: 'Automated HACCP logs, temperature monitoring, and one-click EHO reports. Always audit-ready.',
+    cta: 'Explore Compliance',
+    ctaLink: '/compliance',
     secondaryCta: 'Talk to Expert',
     secondaryLink: '/contact',
     badge: 'HACCP Automated',
@@ -43,7 +46,8 @@ const slides: HeroSlide[] = [
   {
     id: 3,
     image: '/hero-3.png',
-    title: 'Empower Your FOH & BOH Teams',
+    title: 'One Platform for',
+    highlight: 'FOH & BOH Teams',
     subtitle: 'Seamless collaboration and smart task management designed for fast-paced kitchens and floor teams.',
     cta: 'Book a Live Demo',
     ctaLink: '/contact',
@@ -54,8 +58,9 @@ const slides: HeroSlide[] = [
   {
     id: 4,
     image: '/hero-4.png',
-    title: 'Smart Technology, Offline First',
-    subtitle: 'Multi-device support with instant synchronization and bulletproof offline modes for zero downtime.',
+    title: 'Offline-First',
+    highlight: 'Zero Downtime',
+    subtitle: 'Works when your internet doesn\'t. Multi-device sync and bulletproof offline caching.',
     cta: 'Learn More',
     ctaLink: '/about',
     secondaryCta: 'See Pricing',
@@ -65,8 +70,9 @@ const slides: HeroSlide[] = [
   {
     id: 5,
     image: '/hero-5.png',
-    title: 'Ensure EHO Audit Readiness',
-    subtitle: 'Stay ahead of food safety inspections with digital HACCP tracking and one-click compliance logs.',
+    title: 'EHO Audits Made',
+    highlight: 'Effortless',
+    subtitle: 'Digital HACCP tracking, instant compliance logs, and one-click reports for inspectors.',
     cta: 'Get Started',
     ctaLink: '/compliance',
     secondaryCta: 'Start Free Trial',
@@ -81,11 +87,9 @@ export default function HeroCarousel() {
 
   useEffect(() => {
     if (!autoplay) return
-
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 6000)
-
     return () => clearInterval(interval)
   }, [autoplay])
 
@@ -95,16 +99,15 @@ export default function HeroCarousel() {
   }
 
   return (
-    <div className="relative w-full h-[700px] md:h-[95vh] min-h-[600px] overflow-hidden bg-background">
-      {/* Slides */}
+    <div className="relative w-full h-[700px] md:h-screen min-h-[620px] max-h-[900px] overflow-hidden bg-[#060b18]">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute w-full h-full transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             index === currentSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
-          {/* Background Image */}
+          {/* Background image */}
           <div className="absolute inset-0 select-none">
             <Image
               src={slide.image}
@@ -116,59 +119,87 @@ export default function HeroCarousel() {
             />
           </div>
 
-          {/* Overlay: Deep gradient for premium aesthetic & contrast */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
+          {/* Multi-layer overlay for deep dark aesthetic */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#060b18]/90 via-[#060b18]/60 to-[#060b18]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#060b18]/70 via-transparent to-[#060b18]/10" />
 
           {/* Content */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white px-4 max-w-5xl animate-in fade-in slide-in-from-bottom duration-700">
-              {/* Badge */}
-              <div className="flex justify-center mb-5">
-                <span className="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 text-accent font-semibold tracking-[0.2em] uppercase text-[10px] md:text-xs px-4 py-1.5 rounded-full backdrop-blur-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto pt-16">
+              <div className="max-w-2xl">
+                {/* Badge */}
+                <div className={`inline-flex items-center gap-2 bg-white/8 border border-white/15 text-blue-300 font-semibold tracking-[0.18em] uppercase text-[10px] px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm ${
+                  index === currentSlide ? 'animate-in fade-in' : ''
+                }`} style={{ animationDelay: '100ms' }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
                   {slide.badge}
-                </span>
-              </div>
+                </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-5 text-balance font-sans leading-[1.1]">
-                {slide.title}
-              </h1>
-              <p className="text-base md:text-lg lg:text-xl text-white/80 mb-10 max-w-2xl mx-auto text-balance font-light leading-relaxed">
-                {slide.subtitle}
-              </p>
+                <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08] mb-4 ${
+                  index === currentSlide ? 'animate-in slide-in-from-bottom' : ''
+                }`} style={{ animationDelay: '200ms' }}>
+                  {slide.title}
+                  <br />
+                  <span className="text-gradient">{slide.highlight}</span>
+                </h1>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link
-                  href={slide.ctaLink}
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-accent/85 hover:from-accent/90 hover:to-accent text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-1 text-sm md:text-base"
-                >
-                  {slide.cta} <ArrowRight size={18} />
-                </Link>
-                {slide.secondaryCta && (
+                <p className={`text-base md:text-lg text-white/65 mb-10 max-w-lg font-light leading-relaxed ${
+                  index === currentSlide ? 'animate-in slide-in-from-bottom' : ''
+                }`} style={{ animationDelay: '350ms' }}>
+                  {slide.subtitle}
+                </p>
+
+                <div className={`flex flex-col sm:flex-row gap-3 ${
+                  index === currentSlide ? 'animate-in slide-in-from-bottom' : ''
+                }`} style={{ animationDelay: '480ms' }}>
                   <Link
-                    href={slide.secondaryLink || '/contact'}
-                    className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 backdrop-blur-sm border border-white/25 hover:border-white/50 hover:-translate-y-1 text-sm md:text-base"
+                    href={slide.ctaLink}
+                    className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-[#1d4fd8] text-white px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/25 hover:-translate-y-0.5 text-sm"
                   >
-                    {slide.secondaryCta}
+                    {slide.cta} <ArrowRight size={16} />
                   </Link>
-                )}
+                  {slide.secondaryCta && (
+                    <Link
+                      href={slide.secondaryLink || '/contact'}
+                      className="inline-flex items-center justify-center gap-2 bg-white/8 hover:bg-white/14 text-white px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 backdrop-blur-sm border border-white/20 hover:border-white/40 text-sm"
+                    >
+                      {slide.secondaryCta}
+                    </Link>
+                  )}
+                </div>
+
+                {/* Trust line */}
+                <div className={`flex items-center gap-6 mt-10 ${
+                  index === currentSlide ? 'animate-in fade-in' : ''
+                }`} style={{ animationDelay: '600ms' }}>
+                  {[
+                    { value: '500+', label: 'UK Venues' },
+                    { value: '5-Star', label: 'EHO Rated' },
+                    { value: '24/7', label: 'Support' },
+                  ].map((stat, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      {i > 0 && <span className="w-px h-6 bg-white/15" />}
+                      <div className="pl-0 md:pl-2">
+                        <span className="block text-white font-bold text-base leading-none">{stat.value}</span>
+                        <span className="block text-white/45 text-[10px] font-medium mt-0.5">{stat.label}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       ))}
 
-      {/* Dots Navigation */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 bg-black/25 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/10">
+      {/* Dot navigation */}
+      <div className="absolute bottom-8 left-6 sm:left-10 lg:left-16 max-w-7xl z-20 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? 'bg-accent w-8'
-                : 'bg-white/40 w-2 hover:bg-white/70'
+            className={`h-1 rounded-full transition-all duration-400 ${
+              index === currentSlide ? 'bg-[#2563eb] w-8' : 'bg-white/30 w-4 hover:bg-white/50'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
