@@ -4,6 +4,10 @@ import Header from '@/components/header'
 import HeroCarousel from '@/components/hero-carousel'
 import FloatingCTA from '@/components/floating-cta'
 import Footer from '@/components/footer'
+import DeviceMockupSection from '@/components/device-mockup-section'
+import AppShowcase from '@/components/app-showcase'
+import ScrollSection from '@/components/scroll-section'
+import AnimatedCard from '@/components/animated-card'
 import Link from 'next/link'
 import { Check, BarChart3, Shield, Users, Clock, Zap, ArrowRight, Star, Award, Compass, FileCheck2, Activity } from 'lucide-react'
 
@@ -79,7 +83,7 @@ export default function Home() {
       <HeroCarousel />
 
       {/* Editorial Introduction Section */}
-      <section className="w-full py-16 md:py-24 bg-background border-b border-border">
+      <ScrollSection className="w-full py-16 md:py-24 bg-background border-b border-border">
         <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             <div className="lg:col-span-7">
@@ -97,12 +101,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </ScrollSection>
 
       {/* Asymmetrical Editorial Features Section */}
       <section className="w-full py-20 bg-background">
         <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <ScrollSection className="text-center mb-16">
             <span className="text-accent text-xs font-semibold tracking-[0.2em] uppercase block mb-3">
               Comprehensive Suite
             </span>
@@ -110,15 +114,17 @@ export default function Home() {
               Engineered for busy kitchens
             </h2>
             <div className="w-16 h-0.5 bg-accent mx-auto mt-4" />
-          </div>
+          </ScrollSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-border">
             {features.map((feature, index) => {
               const Icon = feature.icon
               return (
-                <div
+                <AnimatedCard
                   key={index}
-                  className="group p-8 bg-card border-r border-b border-border hover:bg-gradient-to-br hover:from-primary/5 hover:to-accent/5 transition-all duration-300 flex flex-col justify-between"
+                  delay={index * 0.1}
+                  className="p-8 bg-card border-r border-b border-border hover:bg-gradient-to-br hover:from-primary/5 hover:to-accent/5 transition-all duration-300 flex flex-col justify-between group"
+                  hover
                 >
                   <div>
                     <div className="w-12 h-12 bg-gradient-to-br from-primary/15 to-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-300 shadow-sm">
@@ -134,7 +140,7 @@ export default function Home() {
                   <div className="text-xs font-semibold text-accent tracking-wider uppercase flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
                     Explore Feature <ArrowRight size={12} />
                   </div>
-                </div>
+                </AnimatedCard>
               )
             })}
           </div>
@@ -142,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* Interactive EHO Shield & Live System Preview */}
-      <section className="w-full py-20 bg-gradient-to-br from-secondary/40 to-primary/5 border-t border-b border-border">
+      <ScrollSection className="w-full py-20 bg-gradient-to-br from-secondary/40 to-primary/5 border-t border-b border-border">
         <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
@@ -207,7 +213,7 @@ export default function Home() {
                       <span className="bg-green-100 text-green-800 text-[9px] px-2 py-0.5 rounded-full font-semibold">Normal</span>
                     </div>
                     <p className="text-2xl font-bold tracking-tight">3.2 °C</p>
-                    <p className="text-[10px] text-muted-foreground mt-1">Walk-in Freezer &bull; Auto-logged 5m ago</p>
+                    <p className="text-[10px] text-muted-foreground mt-1">Walk-in Freezer • Auto-logged 5m ago</p>
                   </div>
 
                   <div className="border border-border rounded-xl p-4 bg-background hover:border-primary/30 transition-colors">
@@ -216,7 +222,7 @@ export default function Home() {
                       <span className="bg-yellow-100 text-yellow-800 text-[9px] px-2 py-0.5 rounded-full font-semibold">Pending 1</span>
                     </div>
                     <p className="text-2xl font-bold tracking-tight">14 / 15</p>
-                    <p className="text-[10px] text-muted-foreground mt-1">Daily Prep Checklist &bull; FOH + BOH</p>
+                    <p className="text-[10px] text-muted-foreground mt-1">Daily Prep Checklist • FOH + BOH</p>
                   </div>
 
                   <div className="border border-border rounded-xl p-4 bg-background sm:col-span-2">
@@ -241,12 +247,18 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </ScrollSection>
+
+      {/* Device Mockup Section - NEW */}
+      <DeviceMockupSection />
+
+      {/* App Showcase Section - NEW */}
+      <AppShowcase />
 
       {/* The Restaurant Operational Loop Timeline */}
       <section className="w-full py-20 bg-background">
         <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <ScrollSection className="text-center mb-16">
             <span className="text-accent text-xs font-semibold tracking-[0.2em] uppercase block mb-3">
               How It Works
             </span>
@@ -254,7 +266,7 @@ export default function Home() {
               Smarter flows, day and night
             </h2>
             <div className="w-16 h-0.5 bg-accent mx-auto mt-4" />
-          </div>
+          </ScrollSection>
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-12 relative">
             {[
@@ -274,7 +286,7 @@ export default function Home() {
                 subtitle: 'At the end of the evening, all reports consolidate into a structured, encrypted file stored securely in the cloud. You are instantly inspection ready.',
               },
             ].map((item, idx) => (
-              <div key={idx} className="relative p-8 bg-card border border-border rounded-2xl hover:border-primary/40 hover:shadow-lg transition-all duration-300 group">
+              <AnimatedCard key={idx} delay={idx * 0.15} className="relative p-8 bg-card border border-border rounded-2xl hover:border-primary/40 hover:shadow-lg transition-all duration-300 group" hover>
                 <div className="text-6xl md:text-7xl font-bold text-accent/12 select-none absolute -top-8 left-6 font-sans group-hover:text-accent/20 transition-colors">
                   {item.step}
                 </div>
@@ -287,14 +299,14 @@ export default function Home() {
                     {item.subtitle}
                   </p>
                 </div>
-              </div>
+              </AnimatedCard>
             ))}
           </div>
         </div>
       </section>
 
       {/* Statistical Editorial Showcase */}
-      <section className="w-full py-16 md:py-24 bg-gradient-to-br from-primary to-primary/90 text-primary-foreground relative overflow-hidden">
+      <ScrollSection className="w-full py-16 md:py-24 bg-gradient-to-br from-primary to-primary/90 text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
@@ -317,10 +329,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </ScrollSection>
 
       {/* Benefits Section */}
-      <section className="w-full py-20 bg-background border-b border-border">
+      <ScrollSection className="w-full py-20 bg-background border-b border-border">
         <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6">
@@ -399,12 +411,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </ScrollSection>
 
       {/* Testimonials Section */}
-      <section className="w-full py-20 bg-secondary/20">
+      <ScrollSection className="w-full py-20 bg-secondary/20">
         <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <ScrollSection className="text-center mb-16">
             <span className="text-accent text-xs font-semibold tracking-[0.2em] uppercase block mb-3">
               Client Feedback
             </span>
@@ -412,13 +424,15 @@ export default function Home() {
               Loved by restaurant managers
             </h2>
             <div className="w-16 h-0.5 bg-accent mx-auto mt-4" />
-          </div>
+          </ScrollSection>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div
+              <AnimatedCard
                 key={index}
+                delay={index * 0.1}
                 className="bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col justify-between group"
+                hover
               >
                 <div>
                   <div className="flex gap-1 mb-6">
@@ -435,14 +449,14 @@ export default function Home() {
                   <p className="text-xs text-muted-foreground">{testimonial.role}</p>
                   <p className="text-xs text-primary font-medium mt-1">{testimonial.company}</p>
                 </div>
-              </div>
+              </AnimatedCard>
             ))}
           </div>
         </div>
-      </section>
+      </ScrollSection>
 
       {/* Premium CTA Section */}
-      <section className="w-full py-20 bg-gradient-to-br from-primary via-primary/95 to-primary/85 text-primary-foreground relative overflow-hidden">
+      <ScrollSection className="w-full py-20 bg-gradient-to-br from-primary via-primary/95 to-primary/85 text-primary-foreground relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent/15 rounded-full blur-3xl -ml-24 -mt-24" />
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
@@ -471,7 +485,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </ScrollSection>
 
       <FloatingCTA />
       <Footer />
